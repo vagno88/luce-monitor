@@ -1,1 +1,43 @@
+name: Luce Monitor
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '0 7 * * *'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Execute script
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: python luce_gas.py
+
+      - name: Commit state file
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+          git add best_offer.json
+
+          git diff --staged --quiet || git commit -m "Update best offer"
+
+          git push
 
