@@ -306,7 +306,7 @@ if changed:
                 color:#003366;
                 text-align:center;
             ">
-                🏆 Nuova Migliore Offerta Luce
+                ⚡ Nuova Migliore Offerta Luce
             </h1>
 
             <p style="
@@ -354,7 +354,7 @@ if changed:
     """
 
     send_email(
-        f"🏆 {best['GESTORE']} | {best['Prezzo kWh']}",
+        f"⚡ {best['GESTORE']} | {best['Prezzo kWh']}",
         html_body
     )
 
