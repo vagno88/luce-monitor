@@ -104,7 +104,7 @@ df = df.dropna(
     subset=[
         "GESTORE",
         "DENOMINAZIONE OFFERTA",
-        "PREZZO Smc",
+        "PREZZO kWh",
         "TOTALE_NUM"
     ]
 )
@@ -131,7 +131,7 @@ current = {
     "gestore": str(best["GESTORE"]),
     "offerta": str(best["DENOMINAZIONE OFFERTA"]),
     "totale": float(best["TOTALE_NUM"]),
-    "smc": str(best["PREZZO Smc"])
+    "kWh": str(best["PREZZO kWh"])
 }
 
 previous = load_previous()
@@ -198,7 +198,7 @@ if changed:
                     font-weight:bold;
                     letter-spacing:1px;
                 ">
-                    PREZZO SMC
+                    PREZZO kWh
                 </div>
 
                 <div style="
@@ -206,7 +206,7 @@ if changed:
                     font-weight:bold;
                     margin-top:5px;
                 ">
-                    {row['PREZZO Smc']}
+                    {row['PREZZO kWh']}
                 </div>
 
             </div>
@@ -221,8 +221,8 @@ if changed:
             ">
 
                 <tr>
-                    <td style="padding:6px;"><b>📋 QVD-CCV</b></td>
-                    <td style="padding:6px;">{row['QVD - CCV']}</td>
+                    <td style="padding:6px;"><b>📋 PCV</b></td>
+                    <td style="padding:6px;">{row['PCV']}</td>
                 </tr>
 
                 <tr>
@@ -306,7 +306,7 @@ if changed:
                 color:#003366;
                 text-align:center;
             ">
-                🏆 Nuova Migliore Offerta Gas
+                🏆 Nuova Migliore Offerta Luce
             </h1>
 
             <p style="
@@ -314,7 +314,7 @@ if changed:
                 color:#555;
                 font-size:16px;
             ">
-                È stata rilevata una variazione nella classifica delle offerte gas a prezzo fisso.
+                È stata rilevata una variazione nella classifica delle offerte Luce a prezzo fisso.
             </p>
 
             {cards}
@@ -354,7 +354,7 @@ if changed:
     """
 
     send_email(
-        f"🏆 {best['GESTORE']} | {best['PREZZO Smc']}",
+        f"🏆 {best['GESTORE']} | {best['PREZZO kWh']}",
         html_body
     )
 
