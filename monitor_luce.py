@@ -6,7 +6,7 @@ import pandas as pd
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-CSV_URL = "https://docs.google.com/spreadsheets/d/18bzSR5JAIGhiISITbEMehDAWRVXMJqUNbqXeTmYLttM/export?format=csv&gid=325699321"
+CSV_URL = "https://docs.google.com/spreadsheets/d/1ToYALBCaB9S_xFLVeLaHP46aD8bF3I09_aB09Up32pE/export?format=csv&gid=259138115"
 
 STATE_FILE = "best_offer.json"
 
