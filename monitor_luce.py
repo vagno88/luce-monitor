@@ -354,7 +354,7 @@ if changed:
     """
 
     send_email(
-        f"⚡ {best['GESTORE']} | {best['Prezzo kWh']}",
+        f"⚡MIGLIOR OFFERTA LUCE AGGIORNATA - 1° {best['GESTORE']} | {best['Prezzo kWh']}",
         html_body
     )
 
