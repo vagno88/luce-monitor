@@ -104,7 +104,7 @@ df = df.dropna(
     subset=[
         "GESTORE",
         "DENOMINAZIONE OFFERTA",
-        "PREZZO kWh",
+        "Prezzo kWh",
         "TOTALE_NUM"
     ]
 )
@@ -131,7 +131,7 @@ current = {
     "gestore": str(best["GESTORE"]),
     "offerta": str(best["DENOMINAZIONE OFFERTA"]),
     "totale": float(best["TOTALE_NUM"]),
-    "kWh": str(best["PREZZO kWh"])
+    "kWh": str(best["Prezzo kWh"])
 }
 
 previous = load_previous()
@@ -198,7 +198,7 @@ if changed:
                     font-weight:bold;
                     letter-spacing:1px;
                 ">
-                    PREZZO kWh
+                    Prezzo kWh
                 </div>
 
                 <div style="
@@ -206,7 +206,7 @@ if changed:
                     font-weight:bold;
                     margin-top:5px;
                 ">
-                    {row['PREZZO kWh']}
+                    {row['Prezzo kWh']}
                 </div>
 
             </div>
@@ -354,7 +354,7 @@ if changed:
     """
 
     send_email(
-        f"🏆 {best['GESTORE']} | {best['PREZZO kWh']}",
+        f"🏆 {best['GESTORE']} | {best['Prezzo kWh']}",
         html_body
     )
 
